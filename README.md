@@ -1,9 +1,8 @@
 <style>
-    /* Добавляем переменные цвета, чтобы стили заработали */
     :root {
-        --mts-red: #E30613;
+        --mts-red: #e30613; /* Фирменный красный МТС */
         --mts-dark: #1d1d1b;
-        --light-bg: #f2f2f2;
+        --light-bg: #f2f3f7;
     }
 
     body {
@@ -69,15 +68,46 @@
 
     /* Стили для видео */
     .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+        height: 0;
+        overflow: hidden;
         margin: 20px 0;
-        text-align: center;
+        border-radius: 8px;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
     }
 
     .video-label {
-        display: block;
-        margin-top: 10px;
         font-weight: bold;
-        color: #666;
+        color: var(--mts-dark);
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .law-links {
+        background: #fff0f0;
+        padding: 20px;
+        border-left: 5px solid var(--mts-red);
+    }
+
+    .law-links a {
+        color: #d32f2f;
+        display: block;
+        margin: 10px 0;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .law-links a:hover {
+        text-decoration: underline;
     }
 
     footer {
@@ -95,34 +125,26 @@
 </style>
 
 <header>
-    <div class="logo">MTS Project</div>
+    <div class="logo">MTS PROJECT</div>
     <nav>
         <a href="#">Главная</a>
-        <a href="#">О нас</a>
+        <a href="#">О проекте</a>
     </nav>
 </header>
-
-<div class="hero">
-    <h1>Добро пожаловать</h1>
-</div>
 
 <div class="container">
     <section>
         <h2>Рекламный ролик</h2>
+        <span class="video-label">Реклама МТС</span>
         <div class="video-container">
-            <iframe src="https://vk.com/video_ext.php?oid=-194202961&id=456243360&hash=792945d83627051a" 
-                    width="100%" height="450" frameborder="0" allowfullscreen title="Реклама МТС"></iframe>
-            <span class="video-label">Реклама МТС</span>
+            <iframe src="https://vk.com/video_ext.php?oid=-194202961&id=456243360&hash=57125368a6d61d15" allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" allowfullscreen></iframe>
         </div>
     </section>
 </div>
 
 <footer>
-    <p>&copy; 2026 Все права защищены.</p>
+    <p>&copy; 2026 Все права защищены</p>
     <div class="credits">
         Над сайтом работали Дряннов Александр и Козичев Илья
     </div>
 </footer>
-
-</body>
-</html>
